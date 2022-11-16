@@ -81,7 +81,7 @@ const App: () => Node = () => {
           <Section title="Malcolm"> </Section>
           <Section title="Vilgot">
           </Section>
-          <Section title="John">
+          <Section title="John Nordin">
             <ReloadInstructions />
           </Section>
           <Section title="Debug">
