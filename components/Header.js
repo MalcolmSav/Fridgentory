@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
-const Header = () => {
+const Header = ({title}) => {
   return (
     <View style={styles.header}>
-      <Text style={styles.text}>Fridge List</Text>
+      <Text style={styles.text}>{title}</Text>
     </View>
   );
+};
+
+Header.defaultProps = {
+  title: 'Shopping List',
 };
 
 const styles = StyleSheet.create({
@@ -16,9 +20,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'darkslateblue',
   },
   text: {
-    color: '#fff',
+    color: 'white',
     fontSize: 23,
     textAlign: 'center',
-  }
+  },
 });
+
 export default Header;
