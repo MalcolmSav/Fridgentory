@@ -11,6 +11,7 @@ const App = () => {
     {
       id: 0,
       text: 'Milk',
+      protein: 8,
     },
     {
       id: 1,
