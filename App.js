@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, Component} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {View, StyleSheet, FlatList, Alert} from 'react-native';
+import {View, StyleSheet, FlatList, Alert, Button} from 'react-native';
 // import {uuid} from 'uuidv4';
 
 import Header from './components/Header';
@@ -9,12 +9,17 @@ import ListItem from './components/ListItem';
 import AddItem from './components/AddItem';
 
 const Stack = createNativeStackNavigator();
-const navigation= this.props.navigation;
+//const navigation= this.props.navigation;
+const App = () => {
 
-function HomeScreen() {
+function MainScreen({navigation}) {
   return (
     <View style={styles.container}>
     <Header title="Fridge Inventory" />
+    <Button 
+    title="Stats" 
+    onPress={() => navigation.navigate('SubScreen')}
+    />
     <AddItem addItem={ addItem} />
     <FlatList
       data={items}
@@ -36,10 +41,15 @@ function HomeScreen() {
   );
 }
 
-function nnnnn() {
+function SubScreen({navigation}) {
   return (
     <View style={styles.container}>
     <Header title="Fridge outventory" />
+    <Button 
+    title="Main" 
+    onPress={() => navigation.navigate('MainScreen')}
+    />
+    <AddItem addItem={ addItem} />
     <AddItem addItem={ addItem} />
     <FlatList
       data={items}
@@ -61,11 +71,11 @@ function nnnnn() {
   );
 }
 
-const App = () => {
- 
-  const HomeScreen = ({ navigation }) => {
 
-  };
+ 
+  //const HomeScreen = ({ navigation }) => {
+
+  
 
   const ProfileScreen = ({ navigation, route }) => {
     return <Text>This is {route.params.name}'s profile</Text>;
@@ -174,8 +184,8 @@ const App = () => {
     <NavigationContainer>
             <Stack.Navigator>
       
-         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Profile" component={nnnnn} />
+        <Stack.Screen name="MainScreen" component={MainScreen} />
+        <Stack.Screen name="SubScreen" component={SubScreen} />
       </Stack.Navigator>
       </NavigationContainer>
   );
