@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {View, StyleSheet, FlatList, Alert} from 'react-native';
+import {View, StyleSheet, FlatList, Alert, Button} from 'react-native';
 // import {uuid} from 'uuidv4';
 
 import Header from './components/Header';
@@ -9,67 +9,66 @@ import ListItem from './components/ListItem';
 import AddItem from './components/AddItem';
 
 const Stack = createNativeStackNavigator();
-const navigation= this.props.navigation;
 
-function HomeScreen() {
-  return (
-    <View style={styles.container}>
-    <Header title="Fridge Inventory" />
-    <AddItem addItem={ addItem} />
-    <FlatList
-      data={items}
-      renderItem={({item}) => (
-        <ListItem
-          item={item}
-          deleteItem={deleteItem}
-          editItem={editItem}
-          isEditing={editStatus}
-          editItemDetail={editItemDetail}
-          saveEditItem={saveEditItem}
-          handleEditChange={handleEditChange}
-          itemChecked={itemChecked}
-          checkedItems={checkedItems}
-        />
-      )}
-    />
-  </View>
-  );
-}
 
-function nnnnn() {
-  return (
-    <View style={styles.container}>
-    <Header title="Fridge outventory" />
-    <AddItem addItem={ addItem} />
-    <FlatList
-      data={items}
-      renderItem={({item}) => (
-        <ListItem
-          item={item}
-          deleteItem={deleteItem}
-          editItem={editItem}
-          isEditing={editStatus}
-          editItemDetail={editItemDetail}
-          saveEditItem={saveEditItem}
-          handleEditChange={handleEditChange}
-          itemChecked={itemChecked}
-          checkedItems={checkedItems}
-        />
-      )}
-    />
-  </View>
-  );
-}
+
+
+
 
 const App = () => {
- 
-  const HomeScreen = ({ navigation }) => {
+  function HomeScreen({navigation}) {
 
-  };
-
-  const ProfileScreen = ({ navigation, route }) => {
-    return <Text>This is {route.params.name}'s profile</Text>;
-  };
+    return (
+      <View style={styles.container}>
+      <Header title="Fridge Inventory" />
+      <AddItem addItem={ addItem} />
+      <FlatList
+        data={items}
+        renderItem={({item}) => (
+          <ListItem
+            item={item}
+            deleteItem={deleteItem}
+            editItem={editItem}
+            isEditing={editStatus}
+            editItemDetail={editItemDetail}
+            saveEditItem={saveEditItem}
+            handleEditChange={handleEditChange}
+            itemChecked={itemChecked}
+            checkedItems={checkedItems}
+          />
+        )}
+      />
+       <Button
+          title="Go to Details"
+          onPress={() => navigation.navigate('Profile')}
+        />
+    </View>
+    );
+  }
+  function nnnnn() {
+    return (
+      <View style={styles.container}>
+      <Header title="Fridge outventory" />
+      <AddItem addItem={ addItem} />
+      <FlatList
+        data={items}
+        renderItem={({item}) => (
+          <ListItem
+            item={item}
+            deleteItem={deleteItem}
+            editItem={editItem}
+            isEditing={editStatus}
+            editItemDetail={editItemDetail}
+            saveEditItem={saveEditItem}
+            handleEditChange={handleEditChange}
+            itemChecked={itemChecked}
+            checkedItems={checkedItems}
+          />
+        )}
+      />
+    </View>
+    );
+  }
 
   const [items, setItems] = useState([
     {
@@ -124,16 +123,13 @@ const App = () => {
     editItemDetailChange({id: editItemDetail.id, text});
   };
 
-  const addItem = ({ navigation, text }) => {
+  const addItem = ({ text }) => {
     if (!text) {
-      navigation.navigate('Profile', {name: 'jane'})
       Alert.alert(
         'No item entered',
         'Please enter an item when adding to your shopping list',
         [
           {
-
-            text: "pog",
             text: 'Understood',
             style: 'cancel',
           },
@@ -169,10 +165,10 @@ const App = () => {
           return [...prevItems.filter(item => item.id !== id), {id, text}];
         });
   };
-
+  
   return (
     <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Home">
       
          <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Profile" component={nnnnn} />
