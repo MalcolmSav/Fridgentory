@@ -71,6 +71,19 @@ function SubScreen({navigation}) {
   );
 }
 
+function GraphicScreen({navigation}) {
+  return (
+    <View style={styles.container}>
+      <Header title="Stats and Graphs" />
+      <Button
+      title="Main"
+      onPress={() => navigation.navigate('MainScreen')} 
+      />
+
+    </View>
+  )
+}
+
 
  
   //const HomeScreen = ({ navigation }) => {
@@ -186,6 +199,7 @@ function SubScreen({navigation}) {
       
         <Stack.Screen name="MainScreen" component={MainScreen} />
         <Stack.Screen name="SubScreen" component={SubScreen} />
+        <Stack.Screen anme="Graphic Screen" Component={GraphicScreen} />
       </Stack.Navigator>
       </NavigationContainer>
   );
