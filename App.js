@@ -71,7 +71,7 @@ function SubScreen({navigation}) {
   );
 }
 
-function GraphicScreen({navigation}) {
+/*function GraphicScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Header title="Stats and Graphs" />
@@ -81,8 +81,8 @@ function GraphicScreen({navigation}) {
       />
 
     </View>
-  )
-}
+  );
+}*/
 
 
  
@@ -121,6 +121,7 @@ function GraphicScreen({navigation}) {
   const [editItemDetail, editItemDetailChange] = useState({
     id: null,
     text: null,
+    protein: null,
   });
 
   const [checkedItems, checkedItemChange] = useState([]);
@@ -132,10 +133,10 @@ function GraphicScreen({navigation}) {
   };
 
   // Submit the users edits to the overall items state
-  const saveEditItem = (id, text) => {
+  const saveEditItem = (id, text, protein) => {
     setItems(prevItems => {
       return prevItems.map(item =>
-        item.id === editItemDetail.id ? {id, text: editItemDetail.text} : item,
+        item.id === editItemDetail.id ? {id, text: editItemDetail.text, protein} : item,
       );
     });
     // Flip edit status back to false
@@ -199,7 +200,7 @@ function GraphicScreen({navigation}) {
       
         <Stack.Screen name="MainScreen" component={MainScreen} />
         <Stack.Screen name="SubScreen" component={SubScreen} />
-        <Stack.Screen anme="Graphic Screen" Component={GraphicScreen} />
+        {/* <Stack.Screen name="Graphic Screen" component={GraphicScreen} /> */}
       </Stack.Navigator>
       </NavigationContainer>
   );
