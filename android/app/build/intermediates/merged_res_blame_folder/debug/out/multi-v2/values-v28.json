@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "com.fridgentory.app-mergeDebugResources-20:/values-v28/values-v28.xml",
+            "outputFile": "com.fridgentory.app-mergeDebugResources-33:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mullgull\\.gradle\\caches\\transforms-3\\1b40e4574e76bff5831ef4bf4270480d\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\vilgo\\.gradle\\caches\\transforms-3\\8e51883dbcabb188efa44b18d397c55d\\transformed\\material-1.1.0\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,143,231,319,407,494,581,668",
+                        "endColumns": "87,87,87,87,86,86,86,86",
+                        "endOffsets": "138,226,314,402,489,576,663,750"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\vilgo\\.gradle\\caches\\transforms-3\\2c5f34b09b3dd28dba18cda10fd57530\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -14,12 +24,12 @@
                         "endOffsets": "125,212,442,684"
                     },
                     "to": {
-                        "startLines": "2,3,4,8",
+                        "startLines": "10,11,12,16",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,397",
-                        "endLines": "2,3,7,11",
+                        "startOffsets": "755,830,917,1097",
+                        "endLines": "10,11,15,19",
                         "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,392,584"
+                        "endOffsets": "825,912,1092,1284"
                     }
                 }
             ]

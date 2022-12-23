@@ -1,7 +1,12 @@
-apply plugin: "com.android.application"
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.application'
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
+
+
+
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -135,7 +140,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.fridgentory"
+        applicationId "com.lengineers.fridgentory"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -253,9 +258,9 @@ dependencies {
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-
+    implementation 'com.google.firebase:firebase-analytics'
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
     }

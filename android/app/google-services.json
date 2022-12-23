@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "141888542805",
+    "project_id": "fridgeventorybase",
+    "storage_bucket": "fridgeventorybase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141888542805:android:87d98aa8f0984793a51cdc",
+        "android_client_info": {
+          "package_name": "com.fridgentory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141888542805-4pg0ij6s67ih7g6487fih8ornpvi2l5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCuZhtolvKujilmnYvamNjXu70A3fWAyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141888542805-4pg0ij6s67ih7g6487fih8ornpvi2l5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

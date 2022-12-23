@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.fridgentory.app-mergeDebugResources-20:/values-v16/values-v16.xml",
+            "outputFile": "com.fridgentory.app-mergeDebugResources-33:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mullgull\\.gradle\\caches\\transforms-3\\1b40e4574e76bff5831ef4bf4270480d\\transformed\\appcompat-1.4.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\vilgo\\.gradle\\caches\\transforms-3\\2c5f34b09b3dd28dba18cda10fd57530\\transformed\\appcompat-1.4.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mullgull\\.gradle\\caches\\transforms-3\\63a3df243d2d102452600006144a86df\\transformed\\core-1.7.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\vilgo\\.gradle\\caches\\transforms-3\\586da1d21d9b186d726452ddd6cbf830\\transformed\\core-1.7.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

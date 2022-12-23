@@ -4,8 +4,8 @@
     <!-- Automatically generated file. DO NOT MODIFY -->
 
     <!-- Value from build type: debug -->
-    <integer name="react_native_dev_server_port">8081</integer>
+    <integer name="react_native_dev_server_port">8082</integer>
     <!-- Value from build type: debug -->
-    <integer name="react_native_inspector_proxy_port">8081</integer>
+    <integer name="react_native_inspector_proxy_port">8082</integer>
 
 </resources>
