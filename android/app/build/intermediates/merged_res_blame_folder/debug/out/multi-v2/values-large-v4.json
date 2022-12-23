@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.fridgentory.app-mergeDebugResources-20:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.fridgentory.app-mergeDebugResources-27:/values-large-v4/values-large-v4.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Mullgull\\.gradle\\caches\\transforms-3\\ff7f9e1ea9c2e709fffb9e018f2252cf\\transformed\\material-1.1.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,177",
+                        "endColumns": "121,133",
+                        "endOffsets": "172,306"
+                    },
+                    "to": {
+                        "startLines": "11,12",
+                        "startColumns": "4,4",
+                        "startOffsets": "752,874",
+                        "endColumns": "121,133",
+                        "endOffsets": "869,1003"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Mullgull\\.gradle\\caches\\transforms-3\\1b40e4574e76bff5831ef4bf4270480d\\transformed\\appcompat-1.4.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.fridgentory.app-mergeDebugResources-20:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.fridgentory.app-mergeDebugResources-27:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mullgull\\.gradle\\caches\\transforms-3\\63a3df243d2d102452600006144a86df\\transformed\\core-1.7.0\\res\\values-zh-rHK\\values-zh-rHK.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.fridgentory.app-mergeDebugResources-20:/values-pl/values-pl.xml",
+            "outputFile": "com.fridgentory.app-mergeDebugResources-27:/values-pl/values-pl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mullgull\\.gradle\\caches\\transforms-3\\1b40e4574e76bff5831ef4bf4270480d\\transformed\\appcompat-1.4.1\\res\\values-pl\\values-pl.xml",
