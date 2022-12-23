@@ -1,8 +1,8 @@
 import React, {useState, Component} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {View, StyleSheet, FlatList, Alert, Button} from 'react-native';
-// import {uuid} from 'uuidv4';
+import { View, StyleSheet, FlatList, Alert, Button, Dimensions, Text, TextInput, ScrollView, SafeAreaView} from 'react-native';
+import { LineChart, BarChart, PieChart, ProgressChart, ContributionGraph, StackedBarChart, Grid} from "react-native-chart-kit";
 
 import Header from './components/Header';
 import ListItem from './components/ListItem';
@@ -41,53 +41,130 @@ function MainScreen({navigation}) {
   );
 }
 
-function SubScreen({navigation}) {
-  return (
-    <View style={styles.container}>
-    <Header title="Fridge outventory" />
-    <Button 
-    title="Main" 
-    onPress={() => navigation.navigate('MainScreen')}
-    />
-    <AddItem addItem={ addItem} />
-    <AddItem addItem={ addItem} />
-    <FlatList
-      data={items}
-      renderItem={({item}) => (
-        <ListItem
-          item={item}
-          deleteItem={deleteItem}
-          editItem={editItem}
-          isEditing={editStatus}
-          editItemDetail={editItemDetail}
-          saveEditItem={saveEditItem}
-          handleEditChange={handleEditChange}
-          itemChecked={itemChecked}
-          checkedItems={checkedItems}
-        />
-      )}
-    />
-  </View>
-  );
-}
+const SubScreen = ({navigation}) =>{
+    
+  //states
+  const [valx, setValx] = React.useState();
+  const [valy, setValy] = React.useState();
+  const  [xarr , setArrX] = React.useState([]);   //[2,4,6,8]
+  const  [yarr , setArrY] = React.useState([0]);  //[60,20,40,120,-40]
 
-/*function GraphicScreen({navigation}) {
+  // labels are x axis
+  // data are y axis
+  let x = 10;
+  let y = 10;
+// setInterval(addData(x+=10,y+=10), 15000);
+
+  const addData = (x ,y) =>{
+    xarr.push(x);
+    setArrX(arrx =>[...xarr]);
+    yarr.push(y);
+    setArrY(arry => [...yarr]);
+    // Axios.post("http://localhost:3001/insert", {x,y});
+  }
+//func to run map
+const showArrayItem = (item) => {
+}
+  
+  // settings graph attribs
+  const data = {
+    labels: [xarr],
+    datasets: [
+      {
+        data: [],
+        color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`, // optional
+        strokeWidth:5 // optional
+      }
+    ],
+  };
+
+// getting screen width to draw graph
+const screenWidth = Dimensions.get("window").width;
+
+
+// inserting data into graph
+data.datasets[0].data = yarr.map(value => value);  
+  
+
   return (
-    <View style={styles.container}>
-      <Header title="Stats and Graphs" />
-      <Button
-      title="Main"
-      onPress={() => navigation.navigate('MainScreen')} 
+    <View>
+    
+     {/* getting x input*/}
+      <TextInput
+        style={styles.input}
+        onChangeText={(valx) => setValx(valx)}
+        placeholder="enter x here..."
+        value={valx}
+        keyboardType="numeric"
       />
 
+      {/* getting y input*/}
+      <TextInput
+        style={styles.input}
+        onChangeText={(valy) => setValy(valy)}
+        placeholder="enter y here..."
+        value={valy}
+        keyboardType="numeric"
+      />
+      {/* inserting x and y into arrays*/}
+      <Button
+        title="Draw"
+       onPress={() =>addData(valx,valy)}
+      />
+
+
+      {/* display of graph*/}
+    <Text>
+    {"\n\n"}
+      </Text>
+      <LineChart
+          data={data}
+          width={screenWidth}
+          height={200}
+          chartConfig={{
+      backgroundGradientFrom: "#ffffff",
+      backgroundGradientTo: "#ffffff",
+      decimalPlaces: 0, // optional, defaults to 2dp
+      color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+      style: {
+        borderRadius: 16
+      },
+      propsForDots: {
+        r: "5",
+      }
+    }}
+      />
+
+      <Text>
+      <ScrollView>
+          {
+            xarr.map((item, key) => (
+
+              <Text key={key} onPress={showArrayItem.bind(this)}>
+                <Text > {item} </Text>
+              </Text>
+
+            ))
+          }
+        </ScrollView>
+        {"\n\n"}
+           <ScrollView>
+          {
+            yarr.map((item, key) => (
+
+              <Text key={key} onPress={showArrayItem.bind(this)}>
+                <Text > {item} </Text>
+              </Text>
+
+            ))
+          }
+        </ScrollView>
+        </Text>
     </View>
+    
   );
-}*/
-
-
- 
-  //const HomeScreen = ({ navigation }) => {
-
+};
+   
   
 
   const ProfileScreen = ({ navigation, route }) => {
@@ -98,21 +175,41 @@ function SubScreen({navigation}) {
     {
       id: 0,
       text: 'Milk',
-      protein: 8,
+      protein: 5.0,
     },
     {
       id: 1,
       text: 'Eggs',
+      protein: 8.0,
     },
     {
       id: 2,
       text: 'Bread',
+      protein: 2.0,
     },
     {
       id: 3,
       text: 'Juice',
+      protein: 1.0,
     },
   ]);
+  /*function ListExample() {
+    return (
+      <FlatList
+        data={[items, setItems]}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.id}</Text>
+            <Text>{item.text}</Text>
+            <Text>{item.protein}</Text>
+          </View>
+        )}
+        keyExtractor={item => item.id.toString()}
+      />
+    );
+  }*/
+  
+
 
   // Flag true if user is currently editing an item
   const [editStatus, editStatusChange] = useState(false);
@@ -210,6 +307,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  exampleText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  }
 });
 
 export default App;
